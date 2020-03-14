@@ -34,3 +34,13 @@ steps:
 
 - task: PublishBuildArtifacts@1
   displayName: 'publish artifacts'
+
+- task: WinRmFileCopy@2
+  inputs:
+    SourcePath: '$(Build.ArtifactStagingDirectory)'
+    MachineNames: '172.17.158.1'
+    AdminUserName: 'INGRNET\dpbaliva'
+    AdminPassword: 'Hexagon@23456789'
+    TargetPath: '\\IN-XALT3314\dpbaliva'
+
+  
