@@ -35,12 +35,12 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'publish artifacts'
 
-- task: WinRmFileCopy@2
+- task: CopyFilesOverSSH@0
   inputs:
-    SourcePath: '$(Build.ArtifactStagingDirectory)'
-    MachineNames: '172.17.158.1'
-    AdminUserName: 'INGRNET\dpbaliva'
-    AdminPassword: 'Hexagon@23456789'
-    TargetPath: '\\IN-XALT3314\dpbaliva'
+    sshEndpoint: 'azure-aws'
+    sourceFolder: '$(Agent.BuildDirectory)'
+    contents: '**'
+    targetFolder: '/home/ubuntu/articats'
+    cleanTargetFolder: true
+    readyTimeout: '20000'
 
-  
