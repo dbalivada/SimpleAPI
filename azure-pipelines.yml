@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'balivadadp.aws.sample'
+  vmImage: 'aws'
 
 variables:
   buildConfiguration: 'Release'
