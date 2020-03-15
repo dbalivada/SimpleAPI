@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'aws'
+  vmImage: 'aws-self'
 
 variables:
   buildConfiguration: 'Release'
